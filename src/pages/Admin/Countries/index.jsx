@@ -3,6 +3,7 @@ import { Button, Space, Table, Tag } from "antd";
 import { useOutletContext } from "react-router";
 import { deleteOne } from "../../../API";
 import { Link } from "react-router-dom";
+import { endpoints } from "../../../API/base";
 const { Column, ColumnGroup } = Table;
 
 const Countries = () => {
@@ -17,7 +18,7 @@ const Countries = () => {
 
   /* delete function */
   const adminDel = (id) => {
-    deleteOne(id)
+    deleteOne(endpoints.countries,id)
     const del = country.filter((x) => x.id != id)
     setCountry(del)
   }

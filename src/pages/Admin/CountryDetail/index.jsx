@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router'
 import { getOne } from '../../../API'
 import { Link } from 'react-router-dom'
+import { endpoints } from '../../../API/base'
 
 const CountryDetail = () => {
 
@@ -11,7 +12,7 @@ const CountryDetail = () => {
   console.log(getData, "xxxx");
 
   useEffect(() => {
-    getOne(id).then(res => setGetData(res.data))
+    getOne(endpoints.countries,id).then(res => setGetData(res.data))
 
   }, [id])
 

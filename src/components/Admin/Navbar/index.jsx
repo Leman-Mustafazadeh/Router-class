@@ -3,8 +3,10 @@ import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import IconButton from "@mui/material/IconButton";
-import { Link } from "react-router-dom";
-const AddminNavbar = () => {
+import { Link, useNavigate } from "react-router-dom";
+const AddminNavbar = ({adminId,setlocalStorageId,setAdminId}) => {
+  console.log(adminId);
+  const navigate = useNavigate()
   return (
     <header>
     <AppBar style={{ backgroundColor: "pink" }} position="static">
@@ -19,7 +21,8 @@ const AddminNavbar = () => {
         <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
           React-Router-Dom (Admin)
         </Typography>
-        <Button color="inherit">
+        {adminId && (<>
+          <Button color="inherit">
           <Link to={"/admin"}>Dashboard</Link>
         </Button>
         <Button color="inherit">
@@ -31,9 +34,13 @@ const AddminNavbar = () => {
         <Button color="inherit">
           <Link to={"/admin/addcountry"}>Addcountry</Link>
         </Button>
-        <Button color="inherit">
-          <Link to={"/admin/login"}>Login</Link>
+        <Button color="inherit" onClick={()=>{
+          setAdminId(null)
+          setlocalStorageId(null)
+          navigate("/admin/login")
+        }}>LogOut
         </Button>
+        </>)}
       </Toolbar>
     </AppBar>
   </header>

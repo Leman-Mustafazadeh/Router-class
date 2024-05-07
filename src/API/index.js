@@ -1,93 +1,62 @@
 import axios from "axios";
-import { BASE_URL } from "./base.js";
+import { BASE_URL } from "./base";
 
-//GETALL
-export async function getAll() {
-  let result = { data: null, error: null }
-  await axios
-    .get(BASE_URL)
-    .then(res => {
-      result = { ...result, data: res.data }
-      console.log(result);
-    })
-    .catch((err) => {
-      result = { ...result, error: err }
-    })
-  return result
+//get all
+export async function getAll(endpoint) {
+  try {
+    const response = await axios.get(BASE_URL + endpoint);
+    return response;
+  } catch (error) {
+    return error;
+  }
 }
 
-//GET
-export async function getOne(id) {
-  let result = { data: null, error: null }
-  await axios
-    .get(BASE_URL + `/${id}`)
-    .then(res => {
-      result = { ...result, data: res.data }
-    })
-    .catch((err) => {
-      result = { ...result, error: err }
-    })
-
-  return result
+//get one
+export async function getOne(endpoint, id) {
+  try {
+    const response = await axios.get(BASE_URL + endpoint + `/${id}`);
+    return response.data;
+  } catch (error) {
+    return error;
+  }
 }
-
-//DELETE
-export async function deleteOne(id) {
-  let result = { data: null, err: null }
-  await axios
-    .delete(BASE_URL + `/${id}`)
-    .then((res) => {
-      result = { ...result, data: res.data }
-    }).catch((err) => {
-      result = { ...result, error: err }
-    })
-
-  return result
-}
-
-
 
 //post
-export async function post(payload) {
-  let result = { data: null, error: null };
-  await axios
-    .post(BASE_URL, payload)
-    .then((res) => {
-      result = { ...result, data: res.data };
-    })
-    .catch((err) => {
-      result = { ...result, error: err };
-    });
+export async function post(endpoint, payload) {
+  try {
+    const response = await axios.post(BASE_URL + endpoint, payload);
+    return response.data;
+  } catch (error) {
+    return error;
+  }
+}
 
-  return result;
+//delete
+export async function deleteOne(endpoint, id) {
+  try {
+    const response = await axios.delete(BASE_URL + endpoint + `/${id}`);
+    return response.data;
+  } catch (error) {
+    return error;
+  }
 }
 
 //put
-export async function putOne(id, payload) {
-  let result = { data: null, error: null };
-  await axios
-    .put(BASE_URL + `/${id}`, payload)
-    .then((res) => {
-      result = { ...result, data: res.data };
-    })
-    .catch((err) => {
-      result = { ...result, error: err };
-    });
-
-  return result;
+export async function put(endpoint, id, payload) {
+  try {
+    const response = await axios.put(BASE_URL + endpoint + `/${id}`, payload);
+    return response.data;
+  } catch (error) {
+    return error;
+  }
 }
 
 //patch
-export async function patchOne(id, payload) {
-  let result = { data: null, error: null };
-  await axios
-    .patch(BASE_URL + `/${id}`, payload)
-    .then((res) => {
-      result = { ...result, data: res.data };
-    })
-    .catch((err) => {
-      result = { ...result, error: err };
-    });
-
-  return result;
+export async function patch(endpoint, id, payload) {
+  try {
+    const response = await axios.patch(BASE_URL + endpoint + `/${id}`, payload);
+    return response.data;
+  } catch (error) {
+    return error;
+  }
 }

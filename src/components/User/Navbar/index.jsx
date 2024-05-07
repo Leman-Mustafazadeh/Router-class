@@ -26,9 +26,6 @@ const UserNavbar = () => {
           <Link to={"/usercountries"}>UserCountries</Link>
         </Button>
         <Button color="inherit">
-          <Link to={"/usercountrydetail/id"}>UserCountryDetail</Link>
-        </Button>
-        <Button color="inherit">
           <Link to={"/about"}>About</Link>
         </Button>
         <Button color="inherit">

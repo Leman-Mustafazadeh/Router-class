@@ -10,7 +10,7 @@
     },
     {
       "name": "Russia",
-      "population": " 1.8% of the total world population.",
+      "population": " 0.13% of the total world population.",
       "flagImg": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPAAAACgCAMAAAAFBRFXAAAAGFBMVEX////VKx4AOaZ6hsMALqNlNYXaKgIAOamtv/ZXAAAAoElEQVR4nO3PARGDAAwAsTJg+HeMDO6+iYPMAAAAAAAAAAAAAAAA8L1zmbmWmd8ywnXCdcJ1wnXCdcJ1wnXCdcJ1wnXCdcJ1wnXCdcJ1wnXCdcJ1wnXCdcJ1wnXCdcJ1+8LPMnMvM/9l5lhGuE64TrhOuE64TrhOuE64TrhOuE64TrhOuE64TrhOuE64TrhOuE64TrhOuE64TrhOuG5d+AXSd6XxCo4SWgAAAABJRU5ErkJggg==",
       "capital": "Moscow",
       "description": "Russia, the largest country in the world, occupies one-tenth of all the land on Earth. It spans 11 time zones across two continents (Europe and Asia) and has coasts on three oceans (the Atlantic, Pacific, and Arctic). The Russian landscape varies from desert to frozen coastline, tall mountains to giant marshes.",
@@ -23,6 +23,35 @@
       "capital": "Washington, D.C.",
       "description": "The United States of America is the world's third largest country in size and nearly the third largest in terms of population. Located in North America, the country is bordered on the west by the Pacific Ocean and to the east by the Atlantic Ocean. Along the northern border is Canada and the southern border is Mexico.",
       "id": "3"
+    }
+  ],
+
+  "users":[
+    {
+      "id":"1",
+      "username":"elnurxo",
+      "email":"elnur@gmail.com",
+      "password":"admin123",
+      "role":"admin"
+
+    },
+    {
+      "id":"2",
+      "username":"laman",
+      "email":"laman@gmail.com",
+      "password":"laman123",
+      "role":"user"
+
+    }
+  ],
+
+  "messages":[
+    {
+      "id":"1",
+      "fullname":"MustafazadaLaman",
+      "email":"laman@gmail.com",
+      "title":"lorem lorem lorem",
+      "isRead":false
     }
   ]
 }

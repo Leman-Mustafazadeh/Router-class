@@ -9,17 +9,17 @@ import Typography from "@mui/material/Typography";
 import Swal from "sweetalert2";
 import { Link } from "react-router-dom";
 import { useOutletContext } from "react-router";
+import { endpoints } from "../../../API/base";
 const UserCountries = () => {
   let [country, setCountry] = useState([]);
   let [search, setSearch] = useState([]);
 
   useEffect(() => {
-    getAll().then((res) => {
+    getAll(endpoints.countries).then((res) => {
       setCountry(res.data);
     });
   }, []);
   console.log(country);
-
   const userSearch = (inpvalue) => {
     const filtsearch = country.filter((x) => x.name.toLowerCase().trim().includes(inpvalue.toLowerCase().trim()));
     setSearch(filtsearch)
@@ -50,7 +50,7 @@ const UserCountries = () => {
     }).then((result) => {
       if (result.isConfirmed) {
         const del = country.filter((x) => x.id != id);
-        deleteOne(id);
+        deleteOne(endpoints.countries,id);
         setCountry(del);
         Swal.fire({
           title: "Deleted!",
