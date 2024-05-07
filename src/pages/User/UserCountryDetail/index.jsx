@@ -1,32 +1,28 @@
-import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
-import { getOne } from '../../../API/';
-
+import React, { useEffect, useState } from 'react'
+import { useParams } from 'react-router'
+import { getOne } from '../../../API'
+import { Link } from "react-router-dom";
 const UserCountryDetail = () => {
-  const { id } = useParams();
- 
-  useEffect(() => {
-    getOne(id)
-      .then((res) => {
-        setCountry(res.data);
-      })
-      .catch((error) => {
-        console.error('Error fetching country details:', error);
-      });
-  }, [id]);
+
+  const {id} = useParams()
+  const [getData,setGetData]= useState([])
+
+  useEffect(()=>{
+    getOne(id).then((res)=>setGetData(res.data))
+  },[id])
+
+    console.log(getData);
 
   return (
-    <div>
-     
-        <div>
-          <h2>Country Detail Page</h2>
-          <p>Country ID: {country.id}</p>
-          <p>Country Name: {country.name}</p>
-          <p>Description: {country.description}</p>
-        </div>
-      
-    </div>
-  );
-};
+   
+    <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "30px", justifyContent: "center", }}>
+    <Link to="/usercountries">Go Admin Panel</Link>
+    <h1>{getData.name}</h1>
+    <p>{getData.description}</p>
+    <img src={getData.flagImg} alt="" />
 
-export default UserCountryDetail;
+  </div>
+  )
+}
+
+export default UserCountryDetail
