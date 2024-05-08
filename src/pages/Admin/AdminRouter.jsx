@@ -15,24 +15,24 @@ const AdminRouter = () => {
       setUsers(res.data)
     })
 
-    if(adminId==null){
+    if(localStorageId==null){
       navigate("/admin/login")
     }
-  },[adminId])
+  },[localStorageId])
   
 
   const [country,setCountry]=useState([])
   const [search,setSearch]= useState([])
 
   useEffect(()=>{
-    getAll(endpoints).then((res)=>{
+    getAll(endpoints.countries).then((res)=>{
       setCountry(res.data)
     })
   },[])
   return (
     <div>
-        <AddminNavbar adminId={adminId} setAdminId={setAdminId} setlocalStorageId={setlocalStorageId} />
-        <Outlet context={[country,setCountry,users,setAdminId,setlocalStorageId]} />
+        <AddminNavbar adminId={adminId} setAdminId={setAdminId} setlocalStorageId={setlocalStorageId}localStorageId={localStorageId} />
+        <Outlet context={[country,setCountry,users,setAdminId,setlocalStorageId,localStorageId]} />
     </div>
   )
 }

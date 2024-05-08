@@ -4,8 +4,8 @@ import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import IconButton from "@mui/material/IconButton";
 import { Link, useNavigate } from "react-router-dom";
-const AddminNavbar = ({adminId,setlocalStorageId,setAdminId}) => {
-  console.log(adminId);
+const AddminNavbar = ({adminId,setlocalStorageId,setAdminId,localStorageId}) => {
+  console.log(localStorageId);
   const navigate = useNavigate()
   return (
     <header>
@@ -21,16 +21,14 @@ const AddminNavbar = ({adminId,setlocalStorageId,setAdminId}) => {
         <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
           React-Router-Dom (Admin)
         </Typography>
-        {adminId && (<>
+        {localStorageId && (<>
           <Button color="inherit">
           <Link to={"/admin"}>Dashboard</Link>
         </Button>
         <Button color="inherit">
           <Link to={"/admin/countries"}>Countries</Link>
         </Button>
-        <Button color="inherit">
-          <Link to={"/admin/countrydetail"}>CountryDetail</Link>
-        </Button>
+    
         <Button color="inherit">
           <Link to={"/admin/addcountry"}>Addcountry</Link>
         </Button>

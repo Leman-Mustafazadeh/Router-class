@@ -12,7 +12,7 @@ export async function getAll(endpoint) {
 }
 
 //get one
-export async function getOne(endpoint, id) {
+export async function getOne(endpoint,id) {
   try {
     const response = await axios.get(BASE_URL + endpoint + `/${id}`);
     return response.data;

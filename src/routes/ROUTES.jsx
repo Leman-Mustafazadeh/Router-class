@@ -31,6 +31,7 @@ export const ROUTES = [
         path: "usercountrydetail/:id",
         element: <UserCountryDetail />,
       },
+
       {
         path: "contact",
         element: <Contact />,

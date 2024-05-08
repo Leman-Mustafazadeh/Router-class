@@ -10,7 +10,7 @@ const Dashboard = () => {
 
   useEffect(() => {
     getAll().then((res) => {
-      setallCount(res.data.length);
+      setallCount(res.data);
     });
   }, []);
   return (

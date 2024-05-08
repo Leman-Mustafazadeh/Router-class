@@ -1,5 +1,5 @@
 {
-  "countries":[
+  "countries": [
     {
       "name": "Azebaijan",
       "population": "0.13% of the total world population.",
@@ -23,35 +23,39 @@
       "capital": "Washington, D.C.",
       "description": "The United States of America is the world's third largest country in size and nearly the third largest in terms of population. Located in North America, the country is bordered on the west by the Pacific Ocean and to the east by the Atlantic Ocean. Along the northern border is Canada and the southern border is Mexico.",
       "id": "3"
-    }
-  ],
-
-  "users":[
-    {
-      "id":"1",
-      "username":"elnurxo",
-      "email":"elnur@gmail.com",
-      "password":"admin123",
-      "role":"admin"
-
     },
     {
-      "id":"2",
-      "username":"laman",
-      "email":"laman@gmail.com",
-      "password":"laman123",
-      "role":"user"
-
+      "id": "41d8",
+      "name": "ds",
+      "population": "1200",
+      "description": "ssssssssssssssssssss",
+      "capital": "thtgf",
+      "flagImg": "https://www.freepnglogos.com/uploads/javascript/logo-html-5-css-javascript-source-code-for-the-taking-23.png"
     }
   ],
-
-  "messages":[
+  "users": [
     {
-      "id":"1",
-      "fullname":"MustafazadaLaman",
-      "email":"laman@gmail.com",
-      "title":"lorem lorem lorem",
-      "isRead":false
+      "id": "1",
+      "username": "elnurxo",
+      "email": "elnur@gmail.com",
+      "password": "admin123",
+      "role": "admin"
+    },
+    {
+      "id": "2",
+      "username": "laman",
+      "email": "laman@gmail.com",
+      "password": "laman123",
+      "role": "user"
+    }
+  ],
+  "messages": [
+    {
+      "id": "1",
+      "fullname": "MustafazadaLaman",
+      "email": "laman@gmail.com",
+      "title": "lorem lorem lorem",
+      "isRead": false
     }
   ]
 }

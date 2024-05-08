@@ -80,7 +80,7 @@ const UserCountries = () => {
       </select>
       {search.map((el, idx) => {
         return (
-          <>
+          
             <div key={idx} style={{ display: "flex", gap: 20, marginTop: 20 }}>
               <Card sx={{ maxWidth: 345 }}>
                 <CardMedia
@@ -105,7 +105,7 @@ const UserCountries = () => {
                 </CardActions>
               </Card>
             </div>
-          </>
+          
         );
       })}
     </>
